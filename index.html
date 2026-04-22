@@ -1,1 +1,988 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c2{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c0{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{background-color:#ffffff;max-width:451.4pt;padding:72pt 72pt 72pt 72pt}.c1{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c0"><span class="c2">&lt;!DOCTYPE html&gt;</span></p><p class="c0"><span class="c2">&lt;html lang=&quot;ja&quot;&gt;</span></p><p class="c0"><span class="c2">&lt;head&gt;</span></p><p class="c0"><span class="c2">&lt;meta charset=&quot;UTF-8&quot;&gt;</span></p><p class="c0"><span class="c2">&lt;title&gt;Questry Service Catalog&lt;/title&gt;</span></p><p class="c0"><span class="c2">&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;</span></p><p class="c0"><span class="c2">&lt;style&gt;</span></p><p class="c0"><span class="c2">&nbsp; :root {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --ink: #1a1a1a;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --paper: #f5f2ea;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --cream: #ebe5d6;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --accent: #8b2c2c;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --gold: #a8894b;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --muted: #5a5550;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --line: #2a2a2a;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; --light: #d4cdb9;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; * { margin: 0; padding: 0; box-sizing: border-box; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; html, body {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--ink);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Shippori Mincho&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.7;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-feature-settings: &quot;palt&quot;;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; body {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 48px 32px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background:</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; radial-gradient(circle at 20% 10%, rgba(168, 137, 75, 0.04) 0%, transparent 50%),</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; radial-gradient(circle at 80% 90%, rgba(139, 44, 44, 0.03) 0%, transparent 50%),</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .page {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; max-width: 980px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin: 0 auto;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Header ===== */</span></p><p class="c0"><span class="c2">&nbsp; .masthead {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-top: 3px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-bottom: 1px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 20px 0 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 48px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: flex;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; justify-content: space-between;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; align-items: baseline;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.15em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .masthead .edition { display: flex; gap: 24px; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .hero {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 24px 0 56px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-bottom: 1px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 56px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .hero::before {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; content: &quot;&quot;;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: absolute;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; top: 0; left: 50%;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; width: 1px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; height: 24px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--line);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .eyebrow {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 11px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.3em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 24px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: flex;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; align-items: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 12px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .eyebrow::before, .eyebrow::after {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; content: &quot;&quot;;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; flex: 1;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; height: 1px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; opacity: 0.3;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; h1 {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 300;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 64px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.1;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-align: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: -0.01em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; h1 .amp {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 400;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 72px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin: 0 8px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .subtitle-jp {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 18px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-align: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.2em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-top: 24px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 500;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .lead {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 15px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-align: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; max-width: 640px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin: 32px auto 0;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.9;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Section Headings ===== */</span></p><p class="c0"><span class="c2">&nbsp; .section {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 72px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .section-header {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: flex;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; align-items: baseline;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 32px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-bottom: 2px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding-bottom: 12px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .section-num {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 56px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 300;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .section-label {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; flex: 1;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .section-label .jp {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 22px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.08em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 4px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .section-label .en {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 14px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.15em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Problem Statement ===== */</span></p><p class="c0"><span class="c2">&nbsp; .problems {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: repeat(3, 1fr);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 1px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border: 1px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .problem {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 28px 24px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .problem-num {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.2em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 12px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .problem-title {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.5;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .problem-text {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 13px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.8;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Solution Architecture ===== */</span></p><p class="c0"><span class="c2">&nbsp; .architecture {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border: 1px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--cream);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 40px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .arch-layer {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: 140px 1fr 180px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 24px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 20px 0;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-bottom: 1px dashed rgba(26, 26, 26, 0.2);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; align-items: center;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .arch-layer:last-child { border-bottom: none; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .arch-tag {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 13px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.2em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .arch-tag .num {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 32px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 300;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: block;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--ink);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 4px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .arch-content .name {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 17px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 6px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.05em;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .arch-content .desc {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 13px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.7;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .arch-billing {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-align: right;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.1em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== BPO Tier Comparison ===== */</span></p><p class="c0"><span class="c2">&nbsp; .tiers {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: repeat(3, 1fr);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 1px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border: 1px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 32px 24px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--ink);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-name,</span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-price,</span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-target,</span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-feature {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-divider {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--gold);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-rank {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 12px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.3em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--gold);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 12px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-name {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 28px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.02em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 4px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-name-jp {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 13px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.15em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 20px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-name-jp { color: var(--light); }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-price {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 32px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 400;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 4px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-price { color: var(--gold); }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-price-unit {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 11px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.15em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 20px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-price-unit { color: var(--light); }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-divider {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; height: 1px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin: 20px 0;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-target-label {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 9px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.25em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 8px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-target-label { color: var(--gold); }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-target {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 12px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.7;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 24px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-features {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; list-style: none;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 0;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-feature {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 12.5px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.6;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 8px 0 8px 20px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--ink);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-bottom: 1px dotted rgba(26, 26, 26, 0.15);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-feature {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-bottom: 1px dotted rgba(245, 242, 234, 0.2);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-feature:last-child { border-bottom: none; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier-feature::before {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; content: &quot;&mdash;&quot;;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: absolute;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; left: 0;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .tier.featured .tier-feature::before { color: var(--gold); }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Advisory Menu ===== */</span></p><p class="c0"><span class="c2">&nbsp; .advisory-grid {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: 1fr 1fr;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 32px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-block {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border: 1px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 28px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-block.highlight {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--cream);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border: 1px solid var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-block.highlight::before {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; content: &quot;SIGNATURE&quot;;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: absolute;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; top: -10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; right: 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 9px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.2em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 4px 10px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-title {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 18px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 4px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.05em;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-title-en {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 13px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.1em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 20px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-list {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; list-style: none;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-item {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: 1fr auto;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 12px 0;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-bottom: 1px dotted rgba(26, 26, 26, 0.2);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; align-items: baseline;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-item:last-child { border-bottom: none; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-item-name {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 13.5px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.5;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .advisory-item-price {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 11px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.05em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-align: right;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; white-space: nowrap;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Onboarding Flow ===== */</span></p><p class="c0"><span class="c2">&nbsp; .onboarding {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: repeat(3, 1fr);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 0;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .onboarding::before {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; content: &quot;&quot;;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: absolute;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; top: 40px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; left: 10%;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; right: 10%;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; height: 1px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; z-index: 0;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .phase {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-align: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 0 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; position: relative;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; z-index: 1;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .phase-circle {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; width: 80px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; height: 80px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border: 2px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-radius: 50%;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin: 0 auto 20px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: flex;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; align-items: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; justify-content: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 28px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 500;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .phase-label {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.25em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 8px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .phase-title {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 16px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 6px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.05em;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .phase-duration {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 13px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 12px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .phase-desc {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 12px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.7;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Differentiation ===== */</span></p><p class="c0"><span class="c2">&nbsp; .diff-grid {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: repeat(3, 1fr);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 24px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .diff-card {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding: 28px 24px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; background: var(--paper);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-left: 3px solid var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .diff-number {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 48px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 300;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--accent);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 12px;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .diff-title {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 15px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 600;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-bottom: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.05em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.5;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .diff-text {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 12.5px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; line-height: 1.8;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* ===== Footer ===== */</span></p><p class="c0"><span class="c2">&nbsp; .colophon {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; border-top: 3px solid var(--line);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; margin-top: 80px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; padding-top: 32px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; display: grid;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; grid-template-columns: 1fr auto 1fr;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; align-items: center;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; gap: 32px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;JetBrains Mono&#39;, monospace;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 10px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.15em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--muted);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: uppercase;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .colophon-mark {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-family: &#39;Cormorant Garamond&#39;, serif;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-style: italic;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-size: 28px;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; font-weight: 400;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; color: var(--ink);</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; letter-spacing: 0.05em;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; text-transform: none;</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; .colophon-right { text-align: right; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* Print styles */</span></p><p class="c0"><span class="c2">&nbsp; @media print {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; body { padding: 0; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; .section { page-break-inside: avoid; }</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; /* Responsive */</span></p><p class="c0"><span class="c2">&nbsp; @media (max-width: 768px) {</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; h1 { font-size: 40px; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; h1 .amp { font-size: 44px; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; .problems, .tiers, .diff-grid, .onboarding { grid-template-columns: 1fr; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; .advisory-grid { grid-template-columns: 1fr; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; .onboarding::before { display: none; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; .arch-layer { grid-template-columns: 1fr; gap: 8px; }</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; .arch-billing { text-align: left; }</span></p><p class="c0"><span class="c2">&nbsp; }</span></p><p class="c0"><span class="c2">&lt;/style&gt;</span></p><p class="c0"><span class="c2">&lt;/head&gt;</span></p><p class="c0"><span class="c2">&lt;body&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&lt;div class=&quot;page&quot;&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Masthead --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;div class=&quot;masthead&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;edition&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;span&gt;Vol. 01&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;span&gt;2026 Edition&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div&gt;Confidential / For Prospective Clients&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Hero --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;section class=&quot;hero&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;eyebrow&quot;&gt;The Questry Service Catalog&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;h1&gt;Entertainment &lt;span class=&quot;amp&quot;&gt;&amp;&lt;/span&gt; Finance&lt;/h1&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;subtitle-jp&quot;&gt;&#12467;&#12531;&#12486;&#12531;&#12484;&#12434;&#12289;&#25237;&#36039;&#21487;&#33021;&#12394;&#36039;&#29987;&#12408;&#12290;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;p class=&quot;lead&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &#21046;&#20316;&#12392;&#35069;&#20316;&#12398;&#29694;&#22580;&#12395;&#12289;&#12501;&#12449;&#12452;&#12490;&#12531;&#12473;&#12392;&#32076;&#21942;&#31649;&#29702;&#12398;&#12503;&#12525;&#12501;&#12455;&#12483;&#12471;&#12519;&#12490;&#12523;&#12434;&#12290;&lt;br&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; Questry &#12399;&#12289;&#12450;&#12491;&#12513;&#12539;&#26144;&#20687;&#12467;&#12531;&#12486;&#12531;&#12484;&#12395;&#29305;&#21270;&#12375;&#12383;&#12467;&#12540;&#12509;&#12524;&#12540;&#12488; &amp; &#12501;&#12449;&#12452;&#12490;&#12531;&#12471;&#12515;&#12523;&#12539;&#12450;&#12489;&#12496;&#12452;&#12470;&#12522;&#12540;&#12391;&#12377;&#12290;&lt;br&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &#21046;&#20316;&#12481;&#12540;&#12512;&#12364;&#21109;&#20316;&#12395;&#38598;&#20013;&#12391;&#12365;&#12427;&#29872;&#22659;&#12434;&#25972;&#12360;&#12289;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12434;&#25237;&#36039;&#21487;&#33021;&#12394;&#37329;&#34701;&#21830;&#21697;&#12392;&#12375;&#12390;&#35373;&#35336;&#12375;&#12414;&#12377;&#12290;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/p&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/section&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Problem --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;section class=&quot;section&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;section-header&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-num&quot;&gt;01&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-label&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;jp&quot;&gt;&#29694;&#22580;&#12364;&#25265;&#12360;&#12427;&#12289;&#19977;&#12388;&#12398;&#27083;&#36896;&#35506;&#38988;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;en&quot;&gt;The Structural Problems&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;problems&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-num&quot;&gt;ISSUE / 01&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-title&quot;&gt;&#21046;&#20316;&#12395;&#23554;&#24565;&#12391;&#12365;&#12394;&#12356;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-text&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#32076;&#29702;&#12289;&#36001;&#21209;&#12289;&#21172;&#21209;&#12289;&#27861;&#21209;&#12289;&#22865;&#32004;&#31649;&#29702;&#12290;&#12496;&#12483;&#12463;&#12458;&#12501;&#12451;&#12473;&#12398;&#36000;&#33655;&#12364;&#12289;&#26412;&#26469;&#27880;&#21147;&#12377;&#12409;&#12365;&#21046;&#20316;&#12539;&#20225;&#30011;&#12363;&#12425;&#26178;&#38291;&#12434;&#22890;&#12387;&#12390;&#12356;&#12427;&#12290;&#23569;&#20154;&#25968;&#20307;&#21046;&#12422;&#12360;&#12395;&#20195;&#26367;&#12418;&#21177;&#12363;&#12394;&#12356;&#12290;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-num&quot;&gt;ISSUE / 02&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-title&quot;&gt;&#12501;&#12449;&#12452;&#12490;&#12531;&#12473;&#30693;&#35211;&#12398;&#19981;&#22312;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-text&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#36039;&#37329;&#35519;&#36948;&#12289;&#36039;&#26412;&#25919;&#31574;&#12289;&#25237;&#36039;&#12473;&#12461;&#12540;&#12512;&#12398;&#35373;&#35336;&#12290;&#22806;&#37096;&#25237;&#36039;&#23478;&#12434;&#36814;&#12360;&#20837;&#12428;&#12427;&#12383;&#12417;&#12395;&#24517;&#35201;&#12394;&#23554;&#38272;&#30693;&#35211;&#12364;&#31038;&#20869;&#12395;&#23384;&#22312;&#12379;&#12378;&#12289;&#30456;&#35527;&#20808;&#12418;&#38480;&#12425;&#12428;&#12390;&#12356;&#12427;&#12290;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-num&quot;&gt;ISSUE / 03&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-title&quot;&gt;&#35069;&#20316;&#22996;&#21729;&#20250;&#12398;&#38480;&#30028;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;problem-text&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#26082;&#23384;&#12398;&#35069;&#20316;&#22996;&#21729;&#20250;&#12473;&#12461;&#12540;&#12512;&#12399;&#38281;&#12376;&#12383;&#20181;&#32068;&#12415;&#12391;&#12354;&#12426;&#12289;&#22806;&#37096;&#36039;&#26412;&#12398;&#21442;&#21152;&#12364;&#38627;&#12375;&#12356;&#12290;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12434;&#25237;&#36039;&#23550;&#35937;&#12392;&#12375;&#12390;&#35373;&#35336;&#12377;&#12427;&#30330;&#24819;&#12381;&#12398;&#12418;&#12398;&#12364;&#27424;&#12369;&#12390;&#12356;&#12427;&#12290;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/section&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Architecture --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;section class=&quot;section&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;section-header&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-num&quot;&gt;02&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-label&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;jp&quot;&gt;&#19977;&#38542;&#24314;&#12390;&#12398;&#12469;&#12540;&#12499;&#12473;&#27083;&#36896;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;en&quot;&gt;The Three-Tier Architecture&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;architecture&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-layer&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-tag&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;num&quot;&gt;&#8544;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Strategic</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-content&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;name&quot;&gt;&#25126;&#30053;&#12450;&#12489;&#12496;&#12452;&#12470;&#12522;&#12540;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;desc&quot;&gt;&#36039;&#37329;&#35519;&#36948;&#12289;&#36039;&#26412;&#25919;&#31574;&#12289;&#12473;&#12461;&#12540;&#12512;&#35373;&#35336; &#8213; &#32076;&#21942;&#12524;&#12452;&#12516;&#12540;&#12408;&#12398;&#28145;&#12356;&#38306;&#19982;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-billing&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Retainer +&lt;br&gt;Success Fee</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-layer&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-tag&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;num&quot;&gt;&#8545;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Operational</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-content&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;name&quot;&gt;&#12467;&#12540;&#12509;&#12524;&#12540;&#12488; BPO&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;desc&quot;&gt;&#32076;&#29702;&#12539;&#36001;&#21209;&#12539;&#27861;&#21209;&#12539;&#21172;&#21209;&#12539;&#32207;&#21209;&#12398;&#32153;&#32154;&#30340;&#12394;&#23455;&#21209;&#20195;&#34892;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-billing&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Monthly&lt;br&gt;Subscription</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-layer&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-tag&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;num&quot;&gt;&#8546;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Foundational</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-content&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;name&quot;&gt;&#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#22522;&#30436;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;desc&quot;&gt;AI &times; &#26989;&#30028;&#12490;&#12524;&#12483;&#12472; &times; &#12505;&#12531;&#12481;&#12510;&#12540;&#12463; &#8213; Questry &#29420;&#33258;&#12398;&#30693;&#30340;&#36039;&#29987;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;arch-billing&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Included in&lt;br&gt;BPO Service</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/section&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Tiers --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;section class=&quot;section&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;section-header&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-num&quot;&gt;03&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-label&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;jp&quot;&gt;&#12467;&#12540;&#12509;&#12524;&#12540;&#12488; BPO &#12503;&#12521;&#12531;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;en&quot;&gt;Monthly Subscription Plans&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;tiers&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;!-- Light --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-rank&quot;&gt;Entry&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-name&quot;&gt;Light&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-name-jp&quot;&gt;&#31435;&#12385;&#19978;&#12370;&#26399; / &#23567;&#35215;&#27169;&#12481;&#12540;&#12512;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-price&quot;&gt;&yen;15&ndash;25&#19975;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-price-unit&quot;&gt;/ MONTH&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-divider&quot;&gt;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-target-label&quot;&gt;For&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-target&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#24467;&#26989;&#21729; 5 &#21517;&#20197;&#19979;&#12398;&#21046;&#20316;&#20250;&#31038;&#12289;&#31435;&#12385;&#19978;&#12370;&#30452;&#24460;&#12398;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488; SPV&#12289;&#24180;&#21830; 1 &#20740;&#20870;&#26410;&#28288;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class=&quot;tier-features&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#26085;&#27425;&#20181;&#35379;&#12539;&#26376;&#27425;&#35430;&#31639;&#34920;&#12539;&#36039;&#37329;&#32368;&#12426;&#34920;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#35531;&#27714;&#26360;&#30330;&#34892;&#12539;&#25903;&#25173;&#20104;&#23450;&#34920;&#20316;&#25104;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;NDA &#38619;&#24418;&#25552;&#20379;&#12539;&#22865;&#32004;&#31649;&#29702;&#21488;&#24115;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#32102;&#19982;&#35336;&#31639;(&#12316;5 &#21517;)&#12539;&#20837;&#36864;&#31038;&#25163;&#32154;&#12365;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#35696;&#20107;&#37682;&#20316;&#25104;&#12539;Drive &#36939;&#29992;&#20195;&#34892;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#26376;&#27425;&#12467;&#12540;&#12509;&#12524;&#12540;&#12488;&#12524;&#12509;&#12540;&#12488;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;!-- Standard --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier featured&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-rank&quot;&gt;Most Selected&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-name&quot;&gt;Standard&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-name-jp&quot;&gt;&#25104;&#38263;&#26399; / &#22806;&#37096;&#25237;&#36039;&#21463;&#20837;&#20013;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-price&quot;&gt;&yen;40&ndash;60&#19975;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-price-unit&quot;&gt;/ MONTH&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-divider&quot;&gt;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-target-label&quot;&gt;For&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-target&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#35079;&#25968;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12434;&#25265;&#12360;&#12427;&#21046;&#20316;&#20250;&#31038;&#12289;&#24180;&#21830; 1&ndash;5 &#20740;&#20870;&#12289;&#12471;&#12540;&#12489;&#12539;&#12471;&#12522;&#12540;&#12474; A &#36039;&#37329;&#35519;&#36948;&#26399;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class=&quot;tier-features&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;Light &#12503;&#12521;&#12531;&#12398;&#20840;&#27231;&#33021;&#12434;&#21253;&#21547;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#20104;&#23455;&#31649;&#29702;&#12539;&#26376;&#27425;&#32076;&#21942;&#20250;&#35696;&#36039;&#26009;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;KPI &#12480;&#12483;&#12471;&#12517;&#12508;&#12540;&#12489;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#22865;&#32004;&#12524;&#12499;&#12517;&#12540;(&#26376; 5 &#20214;)&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#26666;&#20027;&#32207;&#20250;&#12539;&#21462;&#32224;&#24441;&#20250;&#36939;&#21942;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#23601;&#26989;&#35215;&#21063;&#12539;&#35413;&#20385;&#21046;&#24230;&#12469;&#12509;&#12540;&#12488;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#25237;&#36039;&#23478;&#21521;&#12369;&#26376;&#27425; IR &#12524;&#12509;&#12540;&#12488;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#23554;&#20219;&#25285;&#24403; + &#26376;&#27425;&#23450;&#20363; MTG&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;!-- Premium --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-rank&quot;&gt;Comprehensive&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-name&quot;&gt;Premium&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-name-jp&quot;&gt;&#25313;&#22823;&#26399; / &#35079;&#25968;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#20006;&#34892;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-price&quot;&gt;&yen;80&ndash;150&#19975;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-price-unit&quot;&gt;/ MONTH&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-divider&quot;&gt;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-target-label&quot;&gt;For&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;tier-target&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IPO / M&amp;A &#12434;&#35222;&#37326;&#12289;&#12501;&#12449;&#12531;&#12489;&#36939;&#21942;&#20307;&#12289;&#35079;&#25968;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12434;&#20006;&#34892;&#36939;&#29992;&#12377;&#12427;&#20107;&#26989;&#20307;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class=&quot;tier-features&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;Standard &#12503;&#12521;&#12531;&#12398;&#20840;&#27231;&#33021;&#12434;&#21253;&#21547;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;CFO &#20195;&#34892;(&#36913;&#27425;&#32076;&#21942;&#20250;&#35696;&#21442;&#21152;)&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#25237;&#36039;&#22865;&#32004;&#12539;&#26666;&#20027;&#38291;&#22865;&#32004;&#12524;&#12499;&#12517;&#12540;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#37329;&#21830;&#27861;&#12467;&#12531;&#12503;&#12521;&#12452;&#12450;&#12531;&#12473;&#23550;&#24540;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#36039;&#26412;&#25919;&#31574;&#12471;&#12511;&#12517;&#12524;&#12540;&#12471;&#12519;&#12531;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#12496;&#12522;&#12517;&#12456;&#12540;&#12471;&#12519;&#12531;&#25903;&#25588;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#12460;&#12496;&#12490;&#12531;&#12473;&#35373;&#35336;&#12539;&#31038;&#22806;&#24441;&#21729;&#36899;&#25658;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;tier-feature&quot;&gt;&#30435;&#26619;&#23550;&#24540;&#12539;&#12505;&#12531;&#12481;&#12510;&#12540;&#12463;&#20998;&#26512;&lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/section&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Advisory --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;section class=&quot;section&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;section-header&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-num&quot;&gt;04&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-label&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;jp&quot;&gt;&#25126;&#30053;&#12450;&#12489;&#12496;&#12452;&#12470;&#12522;&#12540; &amp; &#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#22411;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;en&quot;&gt;Strategic &amp; Project-Based Services&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;advisory-grid&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;advisory-block&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;advisory-title&quot;&gt;&#25126;&#30053;&#12450;&#12489;&#12496;&#12452;&#12470;&#12522;&#12540;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;advisory-title-en&quot;&gt;Strategic Advisory&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class=&quot;advisory-list&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;&#36039;&#37329;&#35519;&#36948;&#25903;&#25588;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:var(--muted);&quot;&gt;&#12471;&#12540;&#12489;&#12316;&#12471;&#12522;&#12540;&#12474; A&lt;/span&gt;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;50&ndash;100&#19975;/&#26376;&lt;br&gt;+ &#25104;&#21151;&#22577;&#37228; 3&ndash;5%&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;&#36039;&#26412;&#25919;&#31574;&#35373;&#35336;&#12539;&#20877;&#27083;&#31689;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;150&ndash;300&#19975;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;Term Sheet / &#25237;&#36039;&#22865;&#32004;&#20132;&#28169;&#25903;&#25588;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;3&ndash;5&#19975;/h&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;M&amp;A / &#20107;&#26989;&#25215;&#32153;&#12450;&#12489;&#12496;&#12452;&#12470;&#12522;&#12540;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&#20491;&#21029;&#35211;&#31309;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;&#12487;&#12517;&#12540;&#12487;&#12522;&#23550;&#24540;&#25903;&#25588;(&#22770;&#20027;&#20596;)&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;200&ndash;500&#19975;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;&#12496;&#12522;&#12517;&#12456;&#12540;&#12471;&#12519;&#12531;&#31639;&#23450;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;50&ndash;150&#19975;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;advisory-block highlight&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;advisory-title&quot;&gt;&#12467;&#12531;&#12486;&#12531;&#12484; &times; &#12501;&#12449;&#12452;&#12490;&#12531;&#12473;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;advisory-title-en&quot;&gt;Content &times; Finance / Specialty&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class=&quot;advisory-list&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;&#12467;&#12531;&#12486;&#12531;&#12484;&#25237;&#36039;&#12473;&#12461;&#12540;&#12512;&#35373;&#35336;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:var(--muted);&quot;&gt;TK / SPV, Waterfall &#35373;&#35336;&lt;/span&gt;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;300&ndash;800&#19975;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;Completion Guarantee &#32068;&#25104;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&#20491;&#21029;&#35211;&#31309;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;&#35069;&#20316;&#22996;&#21729;&#20250;&#20195;&#26367;&#12473;&#12461;&#12540;&#12512;&#27083;&#31689;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;500&#19975;&#12316;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;IP &#35388;&#21048;&#21270;&#12539;&#12501;&#12449;&#12531;&#12489;&#32068;&#25104;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:var(--muted);&quot;&gt;&#37329;&#21830;&#27861;&#23550;&#24540;&#21547;&#12416;&lt;/span&gt;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;AUM &#36899;&#21205;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li class=&quot;advisory-item&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-name&quot;&gt;&#20250;&#35336;&#20966;&#29702;&#12524;&#12499;&#12517;&#12540;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:var(--muted);&quot;&gt;&#21942;&#26989; / &#21942;&#26989;&#22806;&#20998;&#39006;&#31561;&lt;/span&gt;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;span class=&quot;advisory-item-price&quot;&gt;&yen;50&ndash;100&#19975;&lt;/span&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/section&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Onboarding --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;section class=&quot;section&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;section-header&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-num&quot;&gt;05&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-label&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;jp&quot;&gt;&#23566;&#20837;&#12414;&#12391;&#12398;&#27969;&#12428;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;en&quot;&gt;How We Begin&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;onboarding&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-circle&quot;&gt;&#8544;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-label&quot;&gt;Phase 0&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-title&quot;&gt;&#35386;&#26029;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-duration&quot;&gt;Two Weeks&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-desc&quot;&gt;&#32076;&#29702;&#12539;&#27861;&#21209;&#12539;&#21172;&#21209;&#12398;&#29694;&#29366;&#26842;&#21368;&#12375;&#12392;&#35506;&#38988;&#25277;&#20986;&#12290;&yen;30&ndash;50&#19975;(BPO &#22865;&#32004;&#26178;&#12399;&#30456;&#27578;&#21487;)&#12290;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-circle&quot;&gt;&#8545;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-label&quot;&gt;Phase 1&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-title&quot;&gt;&#22522;&#30436;&#25972;&#20633;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-duration&quot;&gt;One Month&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-desc&quot;&gt;&#20250;&#35336;&#12477;&#12501;&#12488;&#12539;SmartHR&#12539;Drive&#12539;Slack &#12398;&#35373;&#23450;&#12289;&#35215;&#31243;&#25972;&#20633;&#12289;&#22865;&#32004;&#21488;&#24115;&#31227;&#34892;&#12290;&yen;50&ndash;100&#19975;&#12290;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-circle&quot;&gt;&#8546;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-label&quot;&gt;Phase 2&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-title&quot;&gt;&#36939;&#29992;&#38283;&#22987;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-duration&quot;&gt;Ongoing&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;phase-desc&quot;&gt;&#26376;&#27425; BPO &#26412;&#31292;&#20685;&#12290;&#36984;&#25246;&#12373;&#12428;&#12383;&#12486;&#12451;&#12450;&#12395;&#24540;&#12376;&#12383;&#23455;&#21209;&#36930;&#34892;&#12434;&#38283;&#22987;&#12290;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/section&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Differentiation --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;section class=&quot;section&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;section-header&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-num&quot;&gt;06&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;section-label&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;jp&quot;&gt;&#12394;&#12380;&#12289;Questry &#12394;&#12398;&#12363;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;en&quot;&gt;Why Questry&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;diff-grid&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-card&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-number&quot;&gt;01&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-title&quot;&gt;&#12456;&#12531;&#12479;&#12513;&#29305;&#21270;&#12398;&#23554;&#38272;&#24615;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-text&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &#12450;&#12491;&#12513;&#12539;&#26144;&#20687;&#12467;&#12531;&#12486;&#12531;&#12484;&#26989;&#30028;&#12398;&#27083;&#36896;&#12289;&#35069;&#20316;&#22996;&#21729;&#20250;&#12289;IP &#12499;&#12472;&#12493;&#12473;&#12289;&#12454;&#12457;&#12540;&#12479;&#12540;&#12501;&#12457;&#12540;&#12523;&#35373;&#35336; &#8213; &#12371;&#12398;&#38936;&#22495;&#29305;&#26377;&#12398;&#35542;&#28857;&#12434;&#28145;&#12367;&#29702;&#35299;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;&#27726;&#29992;&#30340;&#12394;&#12496;&#12483;&#12463;&#12458;&#12501;&#12451;&#12473;&#20195;&#34892;&#12391;&#12399;&#25201;&#12360;&#12394;&#12356;&#35506;&#38988;&#12395;&#24540;&#12360;&#12414;&#12377;&#12290;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-card&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-number&quot;&gt;02&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-title&quot;&gt;&#12501;&#12449;&#12452;&#12490;&#12531;&#12473;&#12398;&#23455;&#35013;&#21147;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-text&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; TK&#12539;SPV&#12539;&#12501;&#12449;&#12531;&#12489;&#32068;&#25104;&#12289;&#37329;&#21830;&#27861;&#23550;&#24540;&#12289;&#20250;&#35336;&#12539;&#31246;&#21209;&#20966;&#29702;&#12398;&#21028;&#26029;&#12290;&#25126;&#30053;&#12392;&#23455;&#35013;&#12434;&#19968;&#36011;&#12375;&#12390;&#25201;&#12360;&#12427;&#12289;&#26412;&#26684;&#30340;&#12394;&#37329;&#34701;&#12456;&#12531;&#12472;&#12491;&#12450;&#12522;&#12531;&#12464;&#12398;&#12481;&#12540;&#12512;&#12391;&#12377;&#12290;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-card&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-number&quot;&gt;03&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-title&quot;&gt;AI &times; &#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class=&quot;diff-text&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; AI &#12395;&#12424;&#12427;&#12524;&#12496;&#12524;&#12483;&#12472;&#12392;&#12289;&#12463;&#12521;&#12452;&#12450;&#12531;&#12488;&#27178;&#26029;&#12398;&#26989;&#30028;&#12490;&#12524;&#12483;&#12472;&#33988;&#31309;&#12290;&#23569;&#25968;&#31934;&#37613;&#12391;&#39640;&#21697;&#36074;&#12394;&#12469;&#12540;&#12499;&#12473;&#12434;&#12289;&#25345;&#32154;&#30340;&#12363;&#12388;&#21512;&#29702;&#30340;&#12394;&#20385;&#26684;&#12391;&#25552;&#20379;&#12377;&#12427;&#20307;&#21046;&#12434;&#27083;&#31689;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/section&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&nbsp; &lt;!-- Colophon --&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;div class=&quot;colophon&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div&gt;Questry, Inc.&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;colophon-mark&quot;&gt;Questry&lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;div class=&quot;colophon-right&quot;&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; Contact for Inquiry&lt;br&gt;</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &nbsp; questry.co.jp</span></p><p class="c0"><span class="c2">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c0"><span class="c2">&nbsp; &lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&lt;/div&gt;</span></p><p class="c0 c1"><span class="c2"></span></p><p class="c0"><span class="c2">&lt;/body&gt;</span></p><p class="c0"><span class="c2">&lt;/html&gt;</span></p><p class="c0 c1"><span class="c2"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Questry Service Catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #f5f2ea;
+    --cream: #ebe5d6;
+    --accent: #8b2c2c;
+    --gold: #a8894b;
+    --muted: #5a5550;
+    --line: #2a2a2a;
+    --light: #d4cdb9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Shippori Mincho', serif;
+    line-height: 1.7;
+    font-feature-settings: "palt";
+  }
+
+  body {
+    padding: 48px 32px;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(168, 137, 75, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(139, 44, 44, 0.03) 0%, transparent 50%),
+      var(--paper);
+  }
+
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    background: var(--paper);
+    position: relative;
+  }
+
+  /* ===== Header ===== */
+  .masthead {
+    border-top: 3px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0 16px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .masthead .edition { display: flex; gap: 24px; }
+
+  .hero {
+    padding: 24px 0 56px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 56px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 50%;
+    width: 1px;
+    height: 24px;
+    background: var(--line);
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before, .eyebrow::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    opacity: 0.3;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  h1 .amp {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    color: var(--accent);
+    font-size: 72px;
+    font-style: italic;
+    margin: 0 8px;
+  }
+
+  .subtitle-jp {
+    font-size: 18px;
+    text-align: center;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    margin-top: 24px;
+    font-weight: 500;
+  }
+
+  .lead {
+    font-size: 15px;
+    color: var(--muted);
+    text-align: center;
+    max-width: 640px;
+    margin: 32px auto 0;
+    line-height: 1.9;
+  }
+
+  /* ===== Section Headings ===== */
+  .section {
+    margin-bottom: 72px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 12px;
+  }
+
+  .section-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .section-label {
+    flex: 1;
+  }
+
+  .section-label .jp {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .section-label .en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ===== Problem Statement ===== */
+  .problems {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .problem {
+    background: var(--paper);
+    padding: 28px 24px;
+  }
+
+  .problem-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+  }
+
+  .problem-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+
+  .problem-text {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ===== Solution Architecture ===== */
+  .architecture {
+    border: 1px solid var(--line);
+    background: var(--cream);
+    padding: 40px;
+    position: relative;
+  }
+
+  .arch-layer {
+    display: grid;
+    grid-template-columns: 140px 1fr 180px;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px dashed rgba(26, 26, 26, 0.2);
+    align-items: center;
+  }
+
+  .arch-layer:last-child { border-bottom: none; }
+
+  .arch-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .arch-tag .num {
+    font-size: 32px;
+    font-weight: 300;
+    display: block;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .arch-content .name {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .arch-content .desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .arch-billing {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ===== BPO Tier Comparison ===== */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .tier {
+    background: var(--paper);
+    padding: 32px 24px;
+    position: relative;
+  }
+
+  .tier.featured {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .tier.featured .tier-name,
+  .tier.featured .tier-price,
+  .tier.featured .tier-target,
+  .tier.featured .tier-feature {
+    color: var(--paper);
+  }
+
+  .tier.featured .tier-divider {
+    background: var(--gold);
+  }
+
+  .tier-rank {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .tier-name {
+    font-size: 28px;
+    font-weight: 600;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+
+  .tier-name-jp {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  .tier.featured .tier-name-jp { color: var(--light); }
+
+  .tier-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: var(--accent);
+  }
+
+  .tier.featured .tier-price { color: var(--gold); }
+
+  .tier-price-unit {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  .tier.featured .tier-price-unit { color: var(--light); }
+
+  .tier-divider {
+    height: 1px;
+    background: var(--line);
+    margin: 20px 0;
+  }
+
+  .tier-target-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .tier.featured .tier-target-label { color: var(--gold); }
+
+  .tier-target {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .tier-features {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tier-feature {
+    font-size: 12.5px;
+    line-height: 1.6;
+    padding: 8px 0 8px 20px;
+    position: relative;
+    color: var(--ink);
+    border-bottom: 1px dotted rgba(26, 26, 26, 0.15);
+  }
+
+  .tier.featured .tier-feature {
+    border-bottom: 1px dotted rgba(245, 242, 234, 0.2);
+  }
+
+  .tier-feature:last-child { border-bottom: none; }
+
+  .tier-feature::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .tier.featured .tier-feature::before { color: var(--gold); }
+
+  /* ===== Advisory Menu ===== */
+  .advisory-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .advisory-block {
+    border: 1px solid var(--line);
+    padding: 28px;
+    background: var(--paper);
+  }
+
+  .advisory-block.highlight {
+    background: var(--cream);
+    border: 1px solid var(--accent);
+    position: relative;
+  }
+
+  .advisory-block.highlight::before {
+    content: "SIGNATURE";
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    padding: 4px 10px;
+  }
+
+  .advisory-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+  }
+
+  .advisory-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+  }
+
+  .advisory-list {
+    list-style: none;
+  }
+
+  .advisory-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px dotted rgba(26, 26, 26, 0.2);
+    align-items: baseline;
+  }
+
+  .advisory-item:last-child { border-bottom: none; }
+
+  .advisory-item-name {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .advisory-item-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ===== Onboarding Flow ===== */
+  .onboarding {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  .onboarding::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: var(--accent);
+    z-index: 0;
+  }
+
+  .phase {
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .phase-circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--line);
+    background: var(--paper);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .phase-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .phase-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  .phase-duration {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .phase-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ===== Differentiation ===== */
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .diff-card {
+    padding: 28px 24px;
+    background: var(--paper);
+    border-left: 3px solid var(--accent);
+  }
+
+  .diff-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .diff-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+  }
+
+  .diff-text {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ===== Footer ===== */
+  .colophon {
+    border-top: 3px solid var(--line);
+    margin-top: 80px;
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .colophon-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+    text-transform: none;
+  }
+
+  .colophon-right { text-align: right; }
+
+  /* Print styles */
+  @media print {
+    body { padding: 0; }
+    .section { page-break-inside: avoid; }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    h1 { font-size: 40px; }
+    h1 .amp { font-size: 44px; }
+    .problems, .tiers, .diff-grid, .onboarding { grid-template-columns: 1fr; }
+    .advisory-grid { grid-template-columns: 1fr; }
+    .onboarding::before { display: none; }
+    .arch-layer { grid-template-columns: 1fr; gap: 8px; }
+    .arch-billing { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Masthead -->
+  <div class="masthead">
+    <div class="edition">
+      <span>Vol. 01</span>
+      <span>2026 Edition</span>
+    </div>
+    <div>Confidential / For Prospective Clients</div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="eyebrow">The Questry Service Catalog</div>
+    <h1>Entertainment <span class="amp">&</span> Finance</h1>
+    <div class="subtitle-jp">コンテンツを、投資可能な資産へ。</div>
+    <p class="lead">
+      制作と製作の現場に、ファイナンスと経営管理のプロフェッショナルを。<br>
+      Questry は、アニメ・映像コンテンツに特化したコーポレート & ファイナンシャル・アドバイザリーです。<br>
+      制作チームが創作に集中できる環境を整え、プロジェクトを投資可能な金融商品として設計します。
+    </p>
+  </section>
+
+  <!-- Problem -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-label">
+        <div class="jp">現場が抱える、三つの構造課題</div>
+        <div class="en">The Structural Problems</div>
+      </div>
+    </div>
+
+    <div class="problems">
+      <div class="problem">
+        <div class="problem-num">ISSUE / 01</div>
+        <div class="problem-title">制作に専念できない</div>
+        <div class="problem-text">
+          経理、財務、労務、法務、契約管理。バックオフィスの負荷が、本来注力すべき制作・企画から時間を奪っている。少人数体制ゆえに代替も効かない。
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-num">ISSUE / 02</div>
+        <div class="problem-title">ファイナンス知見の不在</div>
+        <div class="problem-text">
+          資金調達、資本政策、投資スキームの設計。外部投資家を迎え入れるために必要な専門知見が社内に存在せず、相談先も限られている。
+        </div>
+      </div>
+      <div class="problem">
+        <div class="problem-num">ISSUE / 03</div>
+        <div class="problem-title">製作委員会の限界</div>
+        <div class="problem-text">
+          既存の製作委員会スキームは閉じた仕組みであり、外部資本の参加が難しい。プロジェクトを投資対象として設計する発想そのものが欠けている。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-label">
+        <div class="jp">三階建てのサービス構造</div>
+        <div class="en">The Three-Tier Architecture</div>
+      </div>
+    </div>
+
+    <div class="architecture">
+      <div class="arch-layer">
+        <div class="arch-tag">
+          <span class="num">Ⅰ</span>
+          Strategic
+        </div>
+        <div class="arch-content">
+          <div class="name">戦略アドバイザリー</div>
+          <div class="desc">資金調達、資本政策、スキーム設計 ― 経営レイヤーへの深い関与</div>
+        </div>
+        <div class="arch-billing">
+          Retainer +<br>Success Fee
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-tag">
+          <span class="num">Ⅱ</span>
+          Operational
+        </div>
+        <div class="arch-content">
+          <div class="name">コーポレート BPO</div>
+          <div class="desc">経理・財務・法務・労務・総務の継続的な実務代行</div>
+        </div>
+        <div class="arch-billing">
+          Monthly<br>Subscription
+        </div>
+      </div>
+      <div class="arch-layer">
+        <div class="arch-tag">
+          <span class="num">Ⅲ</span>
+          Foundational
+        </div>
+        <div class="arch-content">
+          <div class="name">プラットフォーム基盤</div>
+          <div class="desc">AI × 業界ナレッジ × ベンチマーク ― Questry 独自の知的資産</div>
+        </div>
+        <div class="arch-billing">
+          Included in<br>BPO Service
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tiers -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-label">
+        <div class="jp">コーポレート BPO プラン</div>
+        <div class="en">Monthly Subscription Plans</div>
+      </div>
+    </div>
+
+    <div class="tiers">
+      <!-- Light -->
+      <div class="tier">
+        <div class="tier-rank">Entry</div>
+        <div class="tier-name">Light</div>
+        <div class="tier-name-jp">立ち上げ期 / 小規模チーム</div>
+        <div class="tier-price">¥15–25万</div>
+        <div class="tier-price-unit">/ MONTH</div>
+        <div class="tier-divider"></div>
+        <div class="tier-target-label">For</div>
+        <div class="tier-target">
+          従業員 5 名以下の制作会社、立ち上げ直後のプロジェクト SPV、年商 1 億円未満
+        </div>
+        <ul class="tier-features">
+          <li class="tier-feature">日次仕訳・月次試算表・資金繰り表</li>
+          <li class="tier-feature">請求書発行・支払予定表作成</li>
+          <li class="tier-feature">NDA 雛形提供・契約管理台帳</li>
+          <li class="tier-feature">給与計算(〜5 名)・入退社手続き</li>
+          <li class="tier-feature">議事録作成・Drive 運用代行</li>
+          <li class="tier-feature">月次コーポレートレポート</li>
+        </ul>
+      </div>
+
+      <!-- Standard -->
+      <div class="tier featured">
+        <div class="tier-rank">Most Selected</div>
+        <div class="tier-name">Standard</div>
+        <div class="tier-name-jp">成長期 / 外部投資受入中</div>
+        <div class="tier-price">¥40–60万</div>
+        <div class="tier-price-unit">/ MONTH</div>
+        <div class="tier-divider"></div>
+        <div class="tier-target-label">For</div>
+        <div class="tier-target">
+          複数プロジェクトを抱える制作会社、年商 1–5 億円、シード・シリーズ A 資金調達期
+        </div>
+        <ul class="tier-features">
+          <li class="tier-feature">Light プランの全機能を包含</li>
+          <li class="tier-feature">予実管理・月次経営会議資料</li>
+          <li class="tier-feature">KPI ダッシュボード</li>
+          <li class="tier-feature">契約レビュー(月 5 件)</li>
+          <li class="tier-feature">株主総会・取締役会運営</li>
+          <li class="tier-feature">就業規則・評価制度サポート</li>
+          <li class="tier-feature">投資家向け月次 IR レポート</li>
+          <li class="tier-feature">専任担当 + 月次定例 MTG</li>
+        </ul>
+      </div>
+
+      <!-- Premium -->
+      <div class="tier">
+        <div class="tier-rank">Comprehensive</div>
+        <div class="tier-name">Premium</div>
+        <div class="tier-name-jp">拡大期 / 複数プロジェクト並行</div>
+        <div class="tier-price">¥80–150万</div>
+        <div class="tier-price-unit">/ MONTH</div>
+        <div class="tier-divider"></div>
+        <div class="tier-target-label">For</div>
+        <div class="tier-target">
+          IPO / M&A を視野、ファンド運営体、複数プロジェクトを並行運用する事業体
+        </div>
+        <ul class="tier-features">
+          <li class="tier-feature">Standard プランの全機能を包含</li>
+          <li class="tier-feature">CFO 代行(週次経営会議参加)</li>
+          <li class="tier-feature">投資契約・株主間契約レビュー</li>
+          <li class="tier-feature">金商法コンプライアンス対応</li>
+          <li class="tier-feature">資本政策シミュレーション</li>
+          <li class="tier-feature">バリュエーション支援</li>
+          <li class="tier-feature">ガバナンス設計・社外役員連携</li>
+          <li class="tier-feature">監査対応・ベンチマーク分析</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisory -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-label">
+        <div class="jp">戦略アドバイザリー & プロジェクト型</div>
+        <div class="en">Strategic & Project-Based Services</div>
+      </div>
+    </div>
+
+    <div class="advisory-grid">
+      <div class="advisory-block">
+        <div class="advisory-title">戦略アドバイザリー</div>
+        <div class="advisory-title-en">Strategic Advisory</div>
+        <ul class="advisory-list">
+          <li class="advisory-item">
+            <span class="advisory-item-name">資金調達支援<br><span style="font-size:11px;color:var(--muted);">シード〜シリーズ A</span></span>
+            <span class="advisory-item-price">¥50–100万/月<br>+ 成功報酬 3–5%</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">資本政策設計・再構築</span>
+            <span class="advisory-item-price">¥150–300万</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">Term Sheet / 投資契約交渉支援</span>
+            <span class="advisory-item-price">¥3–5万/h</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">M&A / 事業承継アドバイザリー</span>
+            <span class="advisory-item-price">個別見積</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">デューデリ対応支援(売主側)</span>
+            <span class="advisory-item-price">¥200–500万</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">バリュエーション算定</span>
+            <span class="advisory-item-price">¥50–150万</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="advisory-block highlight">
+        <div class="advisory-title">コンテンツ × ファイナンス</div>
+        <div class="advisory-title-en">Content × Finance / Specialty</div>
+        <ul class="advisory-list">
+          <li class="advisory-item">
+            <span class="advisory-item-name">コンテンツ投資スキーム設計<br><span style="font-size:11px;color:var(--muted);">TK / SPV, Waterfall 設計</span></span>
+            <span class="advisory-item-price">¥300–800万</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">Completion Guarantee 組成</span>
+            <span class="advisory-item-price">個別見積</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">製作委員会代替スキーム構築</span>
+            <span class="advisory-item-price">¥500万〜</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">IP 証券化・ファンド組成<br><span style="font-size:11px;color:var(--muted);">金商法対応含む</span></span>
+            <span class="advisory-item-price">AUM 連動</span>
+          </li>
+          <li class="advisory-item">
+            <span class="advisory-item-name">会計処理レビュー<br><span style="font-size:11px;color:var(--muted);">営業 / 営業外分類等</span></span>
+            <span class="advisory-item-price">¥50–100万</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Onboarding -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div class="section-label">
+        <div class="jp">導入までの流れ</div>
+        <div class="en">How We Begin</div>
+      </div>
+    </div>
+
+    <div class="onboarding">
+      <div class="phase">
+        <div class="phase-circle">Ⅰ</div>
+        <div class="phase-label">Phase 0</div>
+        <div class="phase-title">診断</div>
+        <div class="phase-duration">Two Weeks</div>
+        <div class="phase-desc">経理・法務・労務の現状棚卸しと課題抽出。¥30–50万(BPO 契約時は相殺可)。</div>
+      </div>
+      <div class="phase">
+        <div class="phase-circle">Ⅱ</div>
+        <div class="phase-label">Phase 1</div>
+        <div class="phase-title">基盤整備</div>
+        <div class="phase-duration">One Month</div>
+        <div class="phase-desc">会計ソフト・SmartHR・Drive・Slack の設定、規程整備、契約台帳移行。¥50–100万。</div>
+      </div>
+      <div class="phase">
+        <div class="phase-circle">Ⅲ</div>
+        <div class="phase-label">Phase 2</div>
+        <div class="phase-title">運用開始</div>
+        <div class="phase-duration">Ongoing</div>
+        <div class="phase-desc">月次 BPO 本稼働。選択されたティアに応じた実務遂行を開始。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiation -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div class="section-label">
+        <div class="jp">なぜ、Questry なのか</div>
+        <div class="en">Why Questry</div>
+      </div>
+    </div>
+
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-number">01</div>
+        <div class="diff-title">エンタメ特化の専門性</div>
+        <div class="diff-text">
+          アニメ・映像コンテンツ業界の構造、製作委員会、IP ビジネス、ウォーターフォール設計 ― この領域特有の論点を深く理解しています。汎用的なバックオフィス代行では扱えない課題に応えます。
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-number">02</div>
+        <div class="diff-title">ファイナンスの実装力</div>
+        <div class="diff-text">
+          TK・SPV・ファンド組成、金商法対応、会計・税務処理の判断。戦略と実装を一貫して扱える、本格的な金融エンジニアリングのチームです。
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-number">03</div>
+        <div class="diff-title">AI × プラットフォーム</div>
+        <div class="diff-text">
+          AI によるレバレッジと、クライアント横断の業界ナレッジ蓄積。少数精鋭で高品質なサービスを、持続的かつ合理的な価格で提供する体制を構築しています。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colophon -->
+  <div class="colophon">
+    <div>Questry, Inc.</div>
+    <div class="colophon-mark">Questry</div>
+    <div class="colophon-right">
+      Contact for Inquiry<br>
+      questry.co.jp
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
